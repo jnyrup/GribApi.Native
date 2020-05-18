@@ -1,3 +1,4 @@
 [submodule "GribApi.XP"]
 	path = GribApi.XP
-	url = https://github.com/0x1mason/GribApi.XP.git
+	url = https://github.com/jnyrup/GribApi.XP.git
+	branch = update20200518

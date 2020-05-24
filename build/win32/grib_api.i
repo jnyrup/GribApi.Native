@@ -37,7 +37,7 @@
 		return pVal == System.IntPtr.Zero ? null : new GribFile(pVal);
  %}
  
-  %typemap(cstype) grib_iterator* "GribValuesIterator"
+  %typemap(cstype) grib_iterator* "GribCoordinateValuesIterator"
  %typemap(cstype) grib_context* "GribContext"
  %typemap(cstype) grib_handle* "GribHandle"
   %typemap(cstype) grib_keys_iterator* "GribKeysIterator"
@@ -78,16 +78,16 @@
 		return pVal == System.IntPtr.Zero ? null : new GribKeysIterator(pVal);
 	}%}
 	
-%typemap(csvarout, out="GribValuesIterator", excode=SWIGEXCODE2) grib_iterator* %{
+%typemap(csvarout, out="GribCoordinateValuesIterator", excode=SWIGEXCODE2) grib_iterator* %{
 	get {
 		System.IntPtr pVal = $imcall;$excode
 
-		return pVal == System.IntPtr.Zero ? null : new GribValuesIterator(pVal);
+		return pVal == System.IntPtr.Zero ? null : new GribCoordinateValuesIterator(pVal);
 	} %}
-%typemap(csout, out="GribValuesIterator", excode=SWIGEXCODE) grib_iterator* %{{
+%typemap(csout, out="GribCoordinateValuesIterator", excode=SWIGEXCODE) grib_iterator* %{{
 		System.IntPtr pVal = $imcall;$excode
 
-		return pVal == System.IntPtr.Zero ? null : new GribValuesIterator(pVal);
+		return pVal == System.IntPtr.Zero ? null : new GribCoordinateValuesIterator(pVal);
 	}%}
 
 
